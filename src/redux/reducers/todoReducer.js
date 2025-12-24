@@ -6,8 +6,8 @@ const initialState = {
     { text: "Study at 8", completed: true },
   ],
 };
-// Redux toolkit reducer
 
+// Redux toolkit reducer
 export const todoSlice = createSlice({
   name: "todo",
   initialState: initialState,
@@ -30,5 +30,5 @@ export const todoSlice = createSlice({
 });
 
 export const todoReducer = todoSlice.reducer;
-export const todoActions = todoSlice.actions
-export const todoSelector = (state)=> state.todoReducer.todos
+export const todoActions = todoSlice.actions;
+export const todoSelector = (state) => state.todoReducer.todos;

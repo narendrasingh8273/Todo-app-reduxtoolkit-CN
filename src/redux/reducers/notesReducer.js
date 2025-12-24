@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   notes: [
-    { text: " This is fist note", createdOn: new Date() },
-    { text: " This is second note", createdOn: new Date() },
+    { text: " This is fist note", createdOn: new Date().toDateString() },
+    { text: " This is second note", createdOn: new Date().toDateString() },
   ],
 };
 
@@ -14,7 +14,7 @@ const notesSlice = createSlice({
   reducers: {
     // add action creator
     add: (state, action) => {
-      state.notes.push({ text: action.payload, createdOn: new Date() });
+      state.notes.push({ text: action.payload, createdOn: new Date().toDateString() });
     },
     //delete action creator
     delete: (state, action) => {
