@@ -7,5 +7,9 @@ import { loggerMiddleware } from "./middlewares/loggerMiddleware";
 // store configure using redux toolkit
 export const store = configureStore({
   reducer: { todoReducer, notesReducer, notificationReducer },
-  middleware: [loggerMiddleware],
+  // This is depricated
+  // middleware: [...getDefaultMiddleware(),loggerMiddleware],
+  middleware: (getDefaultMiddleware) => {
+    return getDefaultMiddleware().concat(loggerMiddleware);
+  },
 });
